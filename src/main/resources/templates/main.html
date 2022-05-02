@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+        <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+        <title>View All Cars</title>
+    </head>
+    <body>
+        <div>
+            <h1 align="center" style="margin-top:5%;">Car Rental Management</h1>
+            <br/>
+            <br/>
+            <tr>
+            	<div align="center">
+                <div class ="col-sm-5" align = "center">
+                    <div class="panel-body" align="center">
+                        <table class ="table">
+                            <thead class ="thead-dark">
+                                <tr>
+                                    <th>Car ID</th>
+                                    <th>Car Model</th>
+                                    <th>Car No.</th>
+                                    <th>Status</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="car : ${listcar }">
+                                    <td th:text="${car.carId}">Car ID</td>
+                                    <td th:text="${car.carModel}">Car Model</td>
+                                    <td th:text="${car.carNo}">Car No.</td>
+                                    <td th:text="${car.status}">Status</td>
+                                    <td><a th:href="@{'/editCar/' + ${car.carId}}">Edit</a></td>
+                                    <td><a th:href="@{'/deleteCar/' + ${car.carId}}">Delete</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
+            </tr>
+            <br>
+            <tr>
+                <div align="center">
+                    <h3><a th:href="@{'/new'}">Add New Car</a></h3>
+                </div>
+            </tr>
+        </div>
+    </body>
+</html>

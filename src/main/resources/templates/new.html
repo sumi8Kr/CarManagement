@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Save Car</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div style="margin-top:4%;" align="center">
+        <h1>Add New Car</h1>
+        <br />
+        <div class="col-sm-4">
+            <form action="#" th:action="@{/saveCar}" th:object="${car}" method="post">
+				
+				
+				<div align="left">
+                    <tr>
+                        <label class="form-label">Car ID</label>
+                        <td>
+                            <input type="text" th:field="*{carId}" class="form-control"
+                                placeholder="Car ID" />
+                        </td>
+                    </tr>
+                </div>
+				<br>
+                <div align="left">
+                    <tr>
+                        <label class="form-label">Car Model</label>
+                        <td>
+                            <input type="text" th:field="*{carModel}" class="form-control"
+                                placeholder="Car Model" />
+                        </td>
+                    </tr>
+                </div>
+				<br>
+                <div align="left">
+
+                    <tr>
+                        <label class="form-label">Car No.</label>
+                        <td><input type="text" th:field="*{carNo}" class="form-control" placeholder="Car No." /></td>
+                    </tr>
+                </div>
+                <br>
+                <div align="left">
+                    <tr>
+                        <label class="form-label">Status</label>
+                        <td><input type="text" th:field="*{status}" class="form-control" placeholder="Status" /></td>
+                    </tr>
+                </div>
+                <br>
+                <br>
+                <br>
+                <tr>
+                    <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+                </tr>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
